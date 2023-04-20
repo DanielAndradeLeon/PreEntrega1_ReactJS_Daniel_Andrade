@@ -1,0 +1,49 @@
+
+.btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-content {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.btn-content-contador {
+    border: 2px solid var(--clr-gris-claro);
+    border-radius: 10px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+.btn-content-contador > button {
+    margin: 0;
+}
+
+.bot-content-contador > p {
+    text-align: center;
+    width: 20px;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .btn {
+        padding-top: 0;
+    }
+    
+
+    .btn-content-contador {
+        margin-top: 0;
+    }
+
+
+}
