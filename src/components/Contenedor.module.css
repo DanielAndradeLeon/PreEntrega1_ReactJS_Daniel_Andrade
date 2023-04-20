@@ -1,7 +1,0 @@
-.contenedorStyle{
-    background-color:rgb(193, 190, 238);
-    display:flex;
-    flex-direction:column;
-    justify-content: space-between;
-    height: 200vh;
-}

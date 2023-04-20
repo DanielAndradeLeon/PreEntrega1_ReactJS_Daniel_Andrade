@@ -1,5 +1,5 @@
 
-const Section = ({greeting}) => {
+const ItemListContainer = ({greeting}) => {
     return (
         <div style={{
                 textAlign: "center",
@@ -14,4 +14,4 @@ const Section = ({greeting}) => {
     
     }
 
-export default Section;   
+export default ItemListContainer;   
