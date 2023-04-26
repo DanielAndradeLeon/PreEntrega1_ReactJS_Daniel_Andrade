@@ -1,75 +1,35 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.module.css';
-import { BsXLg } from 'react-icons/bs';
-import { VscListSelection } from 'react-icons/vsc';
-import CartWidget from '../CartWidget/CartWidget';
-import Logo from '../Logo/Logo';
+import styles from "./NavBar.module.css"
+import CartWidget from "../CartWidget/CartWidget"
+import { NavLink, Link } from "react-router-dom"
 
-function NavBar() {
-
-    const navRef = useRef();
-    const showNavBar = () => {
-    navRef.current.classList.toggle('responsive_nav');
-    }  
-  return (
-    <div className='header'>
-        <div className='header-content-container'>
-
-            <div className='header-content-logo'>
-                <Link to="/">
-                    <Logo />
-                </Link>
+const NavBar = () => {
+    return (
+        <nav className={styles.NavBar}>
+            <Link to='/'>
+            <h2 className={styles.titulo}>Aldan Store</h2>
+            </Link>
+            <div className={styles.subtitulo}>
+            <h3>Señalética</h3>
             </div>
+            <div className={styles.Categories}>
+                <NavLink to={`/category/Corporativa`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
+                    Corporativa
+                </NavLink>
+                <NavLink to={`/category/Ambiental`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
+                    Ambiental
+                </NavLink>
+                <NavLink to={`/category/Turística`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
+                    Turística
+                </NavLink>
+                <NavLink to={`/category/Vial`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
+                    Vial
+                </NavLink>
+               
+                <CartWidget/>
 
-            <div className='header-content-menu'>
-
-                    <nav ref={ navRef }>
-                        <Link to="/">
-                            <button onClick={ showNavBar }>Home</button>
-                        </Link>
-                        <Link to="/">
-                            <button onClick={ showNavBar }>Señalética</button>
-                        </Link>
-                        <Link to="/category/corporativa">
-                            <button onClick={ showNavBar }>Corporativa</button>
-                        </Link>
-                        <Link to="/category/ambiental">
-                            <button onClick={ showNavBar }>Ambiental</button>
-                        </Link>
-                        <Link to="/category/turistica">
-                            <button onClick={ showNavBar }>Turística</button>
-                        </Link>
-                        <Link to="/category/vial">
-                            <button onClick={ showNavBar }>Vial</button>
-                        </Link>
-                        <Link onClick={ showNavBar } to='/cart'>
-                            <CartWidget />
-                        </Link>
-
-                        <button 
-                            className='nav-btn nav-close-btn' 
-                            onClick={ showNavBar }>
-                            <BsXLg />
-                        </button>
-                    </nav>
-                    
-                    <div className='cart'>
-                        <button 
-                            className='nav-btn' 
-                            onClick={ showNavBar }>
-                            <VscListSelection />
-                        </button>
-
-                        
-                    </div>  
-                    
-                </div>
-        </div>
-    </div>
-  )
+            </div>
+        </nav>
+    )
 }
 
-export default NavBar;
-            
-    
+export default NavBar

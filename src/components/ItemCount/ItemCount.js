@@ -1,45 +1,49 @@
+import styles from './ItemCount.module.css';
 import { useState } from "react";
-import Button from "../Button/Button";
-import './Button.module.css';
 
-const ItemCount = ({ initial, stock, onAddToCart }) => {
-    const [count, setCount] = useState(initial);
+const ItemCount = ({ stock, initial, onAdd }) => {
+    const [quantity, setQuantity] = useState( initial )
 
-    const decrease = () => {
-      if (count > initial) {
-        setCount(count - 1);
-      }
-    };
+    const increment = () => {
+        if ( quantity < stock ) {
+            setQuantity( quantity +1 )
+        }
+    }
 
-    const increase = () => {
-      if (count < stock) {
-        setCount(count + 1);
-      }
-    };
+    const decrement = () => {
+        if ( quantity > 1 ) {
+            setQuantity( quantity -1 )
+        }
+    }
 
     return (
-      <div className='btn'>
+        <div >
+            <div className={styles.Counter}>
 
-          <div className='btn-content'>
-            <div className='btn-content-contador'>
-                  <Button onTouchButton={decrease} >
-                      -
-                  </Button>
-                  <span className='contador'> {count} </span>
-                  <Button onTouchButton={increase} >
-                      +
-                  </Button>
-            </div>
-            <div className='btn-content-btn'>
-                <Button className='btn-add' 
-                onTouchButton={() => onAddToCart(count)}>
-                Comprar
-                </Button>
+                <button className={styles.Controls} onClick={decrement}>
+                    -
+                </button>
+
+                <h4 className={styles.Number}>
+                    {quantity}
+                </h4> 
+
+                <button className={styles.Controls} onClick={increment}>
+                    +
+                </button>
+
             </div>
 
-          </div>
+            <div>
 
-      </div>
-    );
-};
+                <button className={styles.Button} onClick={() =>onAdd(quantity)} disabled={!stock}>
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>
+    )
+
+}
+
 export default ItemCount;

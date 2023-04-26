@@ -1,49 +1,27 @@
-
-.btn {
-    display: flex;
-    flex-direction: column;
+.Counter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-.btn-content {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 2rem;
+.Controls{
+    color: black;
+    font-size: 30px;
+    font-weight: 900;
+    background-color: #f5f5f5;
+    border: #060053;
 }
 
-.btn-content-contador {
-    border: 2px solid var(--clr-gris-claro);
-    border-radius: 10px;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem 1rem;
+.Button{
+    background-color: #f5f5f5;
+    border: #060053;
+    color: black;
+    font-size: 30px;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
 }
 
-.btn-content-contador > button {
-    margin: 0;
-}
-
-.bot-content-contador > p {
-    text-align: center;
-    width: 20px;
-    margin: 0 1rem;
-    font-size: 1rem;
-}
-
-
-
-@media screen and (max-width: 768px) {
-
-    .btn {
-        padding-top: 0;
-    }
-    
-
-    .btn-content-contador {
-        margin-top: 0;
-    }
-
-
-}
