@@ -8,23 +8,33 @@ button{
 
 }
 
-.tilulo{
+.titulo{
     font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--clr-secundario);
+    font-weight: 200;
+    color: var(--clr-primario-dark);
     margin: 0 20px;
 }
 
-.Caategories{
+.subtitulo{
+    font-size: 1rem;
+    font-weight: 100;
+    color: var(--clr-terciario);
+    margin: 0 20px;
+}
+.Categories{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+ 
+}
+
+#Category :hover{
+    scale: 1.2;
+}
+
+.isActive{
     background-color: var(--clr-primario);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    color: var(--clr-secundario);
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 

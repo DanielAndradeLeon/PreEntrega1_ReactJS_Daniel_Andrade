@@ -1,16 +1,16 @@
-import styles from "./NavBar.module.css"
-import CartWidget from "../CartWidget/CartWidget"
-import { NavLink, Link } from "react-router-dom"
+import styles from "./NavBar.module.css";
+import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
+import Header from "../Header/Header";
 
 const NavBar = () => {
     return (
         <nav className={styles.NavBar}>
-            <Link to='/'>
-            <h2 className={styles.titulo}>Aldan Store</h2>
-            </Link>
-            <div className={styles.subtitulo}>
-            <h3>Señalética</h3>
-            </div>
+
+            <Header/>
+           
+            <h3 className={styles.subtitulo}>Señalética</h3>
+        
             <div className={styles.Categories}>
                 <NavLink to={`/category/Corporativa`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
                     Corporativa
@@ -23,6 +23,9 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink to={`/category/Vial`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
                     Vial
+                </NavLink>
+                <NavLink to={`/category/Seguridad`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>
+                    Seguridad
                 </NavLink>
                
                 <CartWidget/>

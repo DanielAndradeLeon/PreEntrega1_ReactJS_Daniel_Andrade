@@ -1,17 +1,25 @@
 .CartWidget{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: blue ;
+    align-items: center;
     font-size: 25px;
-    margin: 0 10px;
-    justify-items: center;
+    margin: 10px;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+    width: 50px;
+    border-radius: 15px;
 }
 
-FiShoppingCart{
-    color: blue;
-    font-size: 25px;
-    margin: 0 10px;
-    justify-items: center;
-    align-items: center;
+.CartIcon{
+
+    font-size: 30px;
+    margin: 10px;
+    padding: 0;
+  
+}
+
+p{
+    margin: 0
+
 }
