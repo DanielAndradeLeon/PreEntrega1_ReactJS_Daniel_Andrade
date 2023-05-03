@@ -1,55 +1,41 @@
-import styles from './CartItem.module.css';
-import { useContext, useState } from "react";
-import ItemCount from '../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
+import style from './CartItem.module.css';
+import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-const CartItem = ({id, nombre, img, precio}) => {
-    
-    const [quantityAdded, setQuantityAdded] = useState( 0 )
 
-    const { addItem } = useContext( CartContext );
 
-    const handleOnAdd = (quantity) => {
-        
-        setQuantityAdded(quantity)
-    
-        const item = {
-            id, nombre, precio
-        }
+const CartItem = ({ id, nombre, quantity, precio, updateQuantity }) => { 
+  const { removeItem} = useContext(CartContext); 
+  const total = precio * quantity;
 
-        addItem(item, quantity)
-    }
+  const handleQuantityChange = (event) => {
+    const newQuantity = parseInt(event.target.value);
+    updateQuantity(id, newQuantity);
+  }
 
-    return (
-        <article className={styles.CardItem}>
-            <header className={styles.Header}>
-                <h2 className={styles.ItemHeader}>
-                    {nombre}
-                </h2>
-            </header>
-            <picture>
-                <img src={img} alt={nombre} />
-            </picture>
-            <section>
-                <p className={styles.Info}>
-                    Precio: {precio}
-                </p>
-            </section>
-
-            {/* <footer className={styles.ItemFooter}>
-               
-                {
-                    quantityAdded > 0 ? (
-                        <Link to={`/cart`} className={styles.buttonDetail}>Terminar mi compra</Link>
-                    ) : (
-                        <ItemCount stock={stock} initial={1} onAdd={handleOnAdd} />
-                    )
-                }
-                
-            </footer> */}
-        </article>
-    )
-}
+  return (
+    <div className={style.cartitem}>
+      <div className={style.cartiteminfo}>
+        <h3>{nombre}</h3>
+        <p>Precio: ${precio}</p>
+        <div>
+          <label htmlFor={`quantity-${id}`}>Cantidad:</label>
+          <input 
+            id={`quantity-${id}`}
+            type="number"
+            min="1"
+            value={quantity}
+            onChange={handleQuantityChange}
+            className={style.input}
+          />
+        </div>
+        <p>Total: ${total}</p>
+      </div>
+      <div className={style.itemaction}>
+        <button className={style.Button} onClick={() => removeItem(id)}>Eliminar</button>
+      </div>
+    </div>
+  );
+};
 
 export default CartItem;

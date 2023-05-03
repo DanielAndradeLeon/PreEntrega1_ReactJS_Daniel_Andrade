@@ -9,9 +9,9 @@ const CartWidget = () => {
 
     return (
 
-        <Link to={`/cart`} className={styles.CartWidget} style={{display: totalQuantity > 0 ? 'block' : ''}}>
-        <div className={styles.CartWidget}>
-            <FiShoppingCart className={styles.CartIcon}/>
+        <Link to={`/cart`} className={styles.CartWidget} style={{display: totalQuantity > 0 ? 'block' : 'none'}}>
+        <div>
+            <FiShoppingCart className={styles.CartIcon}  alt='cart-widget'/>
             <p>{totalQuantity}</p>
         </div>
         </Link>
@@ -20,6 +20,6 @@ const CartWidget = () => {
 } 
 
 
-export default CartWidget
+export default CartWidget;
 
     

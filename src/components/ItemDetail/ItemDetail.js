@@ -51,7 +51,7 @@ const ItemDetail = ({id, nombre, categoria, descripcion, img, precio, stock}) =>
                
                 {
                     quantityAdded > 0 ? (
-                        <Link to={`/cart`} className={styles.buttonDetail}>Terminar mi compra</Link>
+                        <Link to={`/cart`} className={styles.Option}>Terminar mi compra</Link>
                     ) : (
                         <ItemCount stock={stock} initial={1} onAdd={handleOnAdd} />
                     )
@@ -62,4 +62,4 @@ const ItemDetail = ({id, nombre, categoria, descripcion, img, precio, stock}) =>
     )
 }
 
-export default ItemDetail
+export default ItemDetail;
