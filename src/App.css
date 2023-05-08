@@ -19,9 +19,11 @@
   --clr-secundario: rgb(255, 255, 255);
   --clr-terciario: rgb(137, 137, 137);
   --clr-gris-claro: rgb(221, 220, 220);
-  --ff-primario: 'Poppins', sans-serif;
+  --ff-primario: 'Inter Tight', sans-serif;
   --ff-secundario: 'Playfair Display', serif;;
 }
+
+
 
 img{
   width: 20vw;
