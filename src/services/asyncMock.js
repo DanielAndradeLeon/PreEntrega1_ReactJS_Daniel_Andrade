@@ -69,7 +69,7 @@ let products = [
     categoria: "Seguridad",
     descripcion: "Señal de seguridad industrial. Extintor.",
     img: "/images/senal-extintor.jpg",
-    precio: "USD. 249.00",
+    precio: "USD. 24.90",
     stock: "50",
   },
 ];  

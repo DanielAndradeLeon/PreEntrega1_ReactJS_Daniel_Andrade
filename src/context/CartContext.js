@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext({
     cart: [],
@@ -39,5 +39,9 @@ export const CartProvider = ({ children }) => {
 }
 
 export default CartContext
+
+// Path: src\components\Cart\Cart.js
+// import styles from './Cart.module.css';
+
 
      

@@ -5,7 +5,7 @@ import { CartContext } from '../../context/CartContext';
 
 
 const CartItem = ({ id, nombre, quantity, precio, updateQuantity }) => { 
-  const { removeItem} = useContext(CartContext); 
+  const { removeItem } = useContext( CartContext ); 
   const total = precio * quantity;
 
   const handleQuantityChange = (event) => {
