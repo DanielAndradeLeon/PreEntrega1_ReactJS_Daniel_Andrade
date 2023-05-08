@@ -10,10 +10,17 @@ export const CartProvider = ({ children }) => {
     console.log(cart)
 
     const addItem = (item, quantity) => {
+        
+        const itemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
+        
         if(!isInCart(item.id)){
             setCart((prev) => [...prev, { ...item, quantity}])
         } else {
             console.error("El producto ya está en el carrito")
+            
+            const updatedCart = [...cart];
+            updatedCart[itemIndex].quantity += quantity;
+            setCart(updatedCart);
 
         }
     }
@@ -32,7 +39,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, updatedCart }}>
             { children }
         </CartContext.Provider>
     )
