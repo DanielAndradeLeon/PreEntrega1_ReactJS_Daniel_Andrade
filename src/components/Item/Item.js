@@ -1,7 +1,9 @@
+
 import styles from './Item.module.css';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, nombre, categoria, descripcion, img, precio, stock}) => {
+
+const Item = ({id, nombre, categoria, descripcion, pictureURL, precio, stock}) => {
     return (
         <article className={styles.CardItem}>
             <header className={styles.ItemHeader}>
@@ -13,11 +15,11 @@ const Item = ({id, nombre, categoria, descripcion, img, precio, stock}) => {
                 </h4>
             </header>
             <picture>
-                <img src={img} alt={nombre} className={styles.ItemImg} />
+                <img src={pictureURL} alt={nombre} className={styles.ItemImg} />
             </picture>
             <section>
                 <p className={styles.ItemInfo}>
-                   Precio: {precio}
+                   Precio: USD {precio}
                 </p>
             </section>
             <footer className={styles.ItemFooter}>

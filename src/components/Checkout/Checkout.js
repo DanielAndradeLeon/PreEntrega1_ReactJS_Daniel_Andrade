@@ -2,7 +2,7 @@ import { Timestamp, writeBatch } from 'firebase/firestore';
 import { collection, addDoc, getDocs, query, where, documentId } from 'firebase/firestore';
 import { CartContext } from '../../context/CartContext';
 import { useState, useContext } from 'react';
-import { db }   from '../../config/firebase';
+import  db from "../../config/firebase/firebaseConfig"
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 

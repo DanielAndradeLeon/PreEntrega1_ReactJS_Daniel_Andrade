@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({id, nombre, categoria, descripcion, img, precio, stock}) => {
+const ItemDetail = ({id, nombre, categoria, descripcion, pictureURL, precio, stock}) => {
     
     const [quantityAdded, setQuantityAdded] = useState( 0 )
 
@@ -32,14 +32,14 @@ const ItemDetail = ({id, nombre, categoria, descripcion, img, precio, stock}) =>
                 </h4>
             </header>
             <picture>
-                <img src={img} alt={nombre} />
+                <img src={pictureURL} alt={nombre} />
             </picture>
             <section>
                 <p>{descripcion}</p>
             </section>
             <section>
                 <p className={styles.Info}>
-                    Precio: {precio}
+                    Precio: USD {precio}
                 </p>
             </section>
             <section>
