@@ -7,7 +7,7 @@ export const CartContext = createContext({
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    console.log(cart)
+    console.log(cart);
 
     const addItem = (item, quantity) => {
         
@@ -18,38 +18,42 @@ export const CartProvider = ({ children }) => {
         } else {
             console.error("El producto ya está en el carrito")
             
-            const updatedCart = [...cart];
+            let updatedCart = [...cart];
             updatedCart[itemIndex].quantity += quantity;
             setCart(updatedCart);
 
         }
-    }
+    };
     
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId) 
-        setCart(cartUpdated)
-    }
+        setCart(cartUpdated);
+    };
  
     const clearCart = () => {
-        setCart([])
-    }
+        setCart([]);
+    };
 
     const isInCart = (itemId) => {
         return cart.some(prod => prod.id === itemId)
-    }
+    };
+
+    const totalQuantity = () => {
+        let quantity = 0;
+        cart.forEach((item) => quantity += item.quantity)
+        return quantity;
+    };
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, updatedCart }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, totalQuantity }}>
             { children }
         </CartContext.Provider>
-    )
+    );
 
-}
+};
 
 export default CartContext
 
-// Path: src\components\Cart\Cart.js
-// import styles from './Cart.module.css';
 
 
      

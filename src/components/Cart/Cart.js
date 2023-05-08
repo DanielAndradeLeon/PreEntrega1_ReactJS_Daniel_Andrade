@@ -1,6 +1,6 @@
 import styles from './Cart.module.css';
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import CartContext from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 import { Link } from 'react-router-dom';
 
