@@ -1,8 +1,6 @@
 import style from './CartItem.module.css';
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
-
-
+import CartContext from '../../context/CartContext';
 
 const CartItem = ({ id, nombre, quantity, precio }) => { 
   const { removeItem } = useContext( CartContext ); 
