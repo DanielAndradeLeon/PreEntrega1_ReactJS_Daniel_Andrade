@@ -22,7 +22,7 @@ function App() {
             <Route path='*' element={<h2>404 NOT FOUND</h2>} />
           </Routes>
         </CartProvider>
-      </BrowserRouter>
+       </BrowserRouter>
     </div>
   );
 }
