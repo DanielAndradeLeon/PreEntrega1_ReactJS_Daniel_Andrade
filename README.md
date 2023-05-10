@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# Aldan Store (e-commerce Web App)
+
+### *Tienda electrónica desarrollada con React*
+
+## Instalación
+
+### *Instrucciones para obtener una copia del proyecto en tu ordenador para efectos de pruebas y mejoras.*
+
+## 1. Clonar el repositorio
+
+```
+git clone https://
+
+```
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +86,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

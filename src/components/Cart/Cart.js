@@ -5,9 +5,9 @@ import CartItem from '../CartItem/CartItem';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
+    const { cart, clearCart, totalQuantity, cartTotal } = useContext(CartContext);
     
-    if(totalQuantity === 0 ) {
+    if(totalQuantity() === 0 ) {
         return (
             <div className={styles.Cart}>
                 <h2 className={styles.Title}>Tu carrito está vacío</h2>
@@ -20,7 +20,7 @@ const Cart = () => {
         <div className={styles.Cart}>
             { cart.map(p => <CartItem key={p.id} {...p} />)}
             <h3>Total:
-                {total}
+                {cartTotal()}
             </h3>
             <button onClick={() => clearCart()} className={styles.Button}>
                 Vaciar carrito

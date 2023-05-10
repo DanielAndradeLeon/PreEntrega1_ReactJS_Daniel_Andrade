@@ -1,41 +1,60 @@
-button{
-    background-color: var(--clr-primario);
-    color: var(--clr-secundario);
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    outline: none;
+.NavBar{
+    width: 100%;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
 
 }
 
-.titulo{
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: var(--clr-primario-dark);
-    margin: 0 20px;
-}
-
-.subtitulo{
-    font-size: 1rem;
-    font-weight: 100;
-    color: var(--clr-terciario);
-    margin: 0 20px;
-}
 .Categories{
     display: flex;
- 
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--clr-secundario);
+    color: var(--clr-primario);
+    padding: 0.5vw;
+    margin: 0;
+    width: 100%;
+    border: 1px solid var(--clr-gris-claro);
+    font-size: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    outline: none;
+    align-self: center;
 }
 
-#Category :hover{
+.Categories :hover{
     scale: 1.2;
 }
 
-.isActive{
-    background-color: var(--clr-primario);
-    color: var(--clr-secundario);
-    border-radius: 5px;
-    padding: 5px 10px;
+.Categories :active{
+    scale: 1.2;
+    color: var(--clr-gris-claro);
 }
+
+.Categories :focus{
+    scale: 1.2;
+    color: var(--clr-gris-claro);
+}
+
+a{
+    text-decoration: none;
+    color: var(--clr-primario);
+    background: transparent;
+    font-size: 1.5rem;
+    font-weight: 300;
+    
+}
+
+
+    
+
+
+
 
 
 

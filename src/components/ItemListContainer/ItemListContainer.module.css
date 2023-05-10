@@ -1,0 +1,13 @@
+.ItemList{
+    align-items: center;
+}
+
+.TituloListContainer{
+    font-size: 5vh;
+    font-weight: 400;
+    color: var(--clr-primario-dark);
+    background: transparent;
+    border: none;
+    margin: 3vh;
+    padding: 0vw 1vw 0vw 1vw;
+}

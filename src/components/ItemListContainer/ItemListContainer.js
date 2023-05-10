@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import styles from './ItemListContainer.module.css';
 import { getDocs, collection, query, where } from "firebase/firestore";
 import db from "../../config/firebase/firebaseConfig";
 
@@ -30,7 +31,10 @@ const ItemListContainer = ({ greeting }) => {
             })
             .catch(error => {
                 console.error(error)
+
+                
             })
+
             .finally(() => {
                 setLoading(false)
             })
@@ -39,8 +43,8 @@ const ItemListContainer = ({ greeting }) => {
 console.log(products)
 
     return (
-        <div >
-           <h1>{ greeting }</h1>
+        <div className={styles.ItemList}>
+           <h1 className={styles.TituloListContainer}>{ greeting }</h1>
            <ItemList products={ products }/>
         </div>
     )

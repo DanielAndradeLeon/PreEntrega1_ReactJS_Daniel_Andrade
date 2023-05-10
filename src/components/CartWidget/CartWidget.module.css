@@ -1,25 +1,24 @@
 .CartWidget{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     font-size: 25px;
+    border-radius: 10px;
     margin: 10px;
     margin: 0;
     padding: 0;
-    background-color: brown;
-    width: 50px;
-    border-radius: 15px;
+    background-color: var(--clr-secundario);
 }
 
 .CartIcon{
-
     font-size: 30px;
     margin: 10px;
     padding: 0;
-  
+    background-color: var(--clr-secundario);
 }
 
-p{
-    margin: 0
-
+.totalQuantity{
+    background-color: var(--clr-secundario);
+    margin: 2px;
 }

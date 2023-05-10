@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({id, nombre, categoria, descripcion, pictureURL, precio, stock}) => {
+const ItemDetail = ({id, nombre, descripcion, pictureURL, precio, stock}) => {
     
     const [quantityAdded, setQuantityAdded] = useState( 0 )
 
@@ -27,22 +27,19 @@ const ItemDetail = ({id, nombre, categoria, descripcion, pictureURL, precio, sto
                 <h2 className={styles.ItemHeader}>
                     {nombre}
                 </h2>
-                <h4 className={styles.CategoryHeader}>
-                    {categoria}
-                </h4>
             </header>
             <picture>
-                <img src={pictureURL} alt={nombre} />
-            </picture>
-            <section>
+                <img className={styles.FotoProducto} src={pictureURL} alt={nombre} />
+            </picture >
+            <section className={styles.Descripcion}>
                 <p>{descripcion}</p>
             </section>
-            <section>
+            <section className={styles.Precio}>
                 <p className={styles.Info}>
                     Precio: USD {precio}
                 </p>
             </section>
-            <section>
+            <section className={styles.Stock}>
                 <p className={styles.Info}>
                     Stock disponible: {stock} unidades
                 </p>
@@ -53,7 +50,7 @@ const ItemDetail = ({id, nombre, categoria, descripcion, pictureURL, precio, sto
                     quantityAdded > 0 ? (
                         <Link to={`/cart`} className={styles.Option}>Terminar mi compra</Link>
                     ) : (
-                        <ItemCount stock={stock} initial={1} onAdd={handleOnAdd} />
+                        <ItemCount className={styles.ItemCount} stock={stock} initial={1} onAdd={handleOnAdd} />
                     )
                 }
                 
