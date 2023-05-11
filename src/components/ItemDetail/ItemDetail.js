@@ -15,7 +15,7 @@ const ItemDetail = ({id, nombre, descripcion, pictureURL, precio, stock}) => {
         setQuantityAdded(quantity)
     
         const item = {
-            id, nombre, precio
+            id, nombre, pictureURL, precio
         }
 
         addItem(item, quantity)
@@ -23,37 +23,48 @@ const ItemDetail = ({id, nombre, descripcion, pictureURL, precio, stock}) => {
 
     return (
         <article className={styles.CardItem}>
+
             <header className={styles.Header}>
                 <h2 className={styles.ItemHeader}>
                     {nombre}
                 </h2>
             </header>
+
             <picture>
                 <img className={styles.FotoProducto} src={pictureURL} alt={nombre} />
             </picture >
+
             <section className={styles.Descripcion}>
-                <p>{descripcion}</p>
+                <p>
+                    {descripcion}
+                </p>
             </section>
+
             <section className={styles.Precio}>
                 <p className={styles.Info}>
                     Precio: USD {precio}
                 </p>
             </section>
+
             <section className={styles.Stock}>
                 <p className={styles.Info}>
                     Stock disponible: {stock} unidades
                 </p>
             </section>
-            <footer className={styles.ItemFooter}>
-               
+
+            <footer className={styles.ItemFooter}>   
                 {
                     quantityAdded > 0 ? (
-                        <Link to={`/cart`} className={styles.Option}>Terminar mi compra</Link>
+                        <Link to={`/cart`} className={styles.Option}>
+                            Comprar
+                        </Link>
+
                     ) : (
                         <ItemCount className={styles.ItemCount} stock={stock} initial={1} onAdd={handleOnAdd} />
                     )
-                }
-                
+                } 
+
+  
             </footer>
         </article>
     )

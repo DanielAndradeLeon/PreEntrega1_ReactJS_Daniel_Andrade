@@ -10,7 +10,6 @@
     padding: 20px;
     border-radius: 15px;
     border: none;
-    box-shadow: 0 0 20px var(--clr-primario-dark);
     width: 30vw;
     height: 30vw;
     background: var(--clr-terciario);
@@ -23,7 +22,7 @@
 
 .CardItem:hover{
     scale: 1.1;
-    box-shadow: 0 0 20px var(--clr-primario-light);
+    box-shadow: 10px 10px 20px var(--clr-secundario);
 }
 
 .ItemImg{
@@ -37,7 +36,7 @@
 }
 
 .ItemHeaderTitle{
-    font-size: 2rem;
+    font-size: 2vw;
     font-weight: 400;
     color: var(--clr-primario-dark);
     background-color: var(--clr-terciario);
@@ -49,7 +48,7 @@
 }
 
 .ItemInfo{
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: 500;
     color: var(--clr-primario-dark);
     background-color: var(--clr-terciario);
@@ -58,7 +57,7 @@
 .buttonDetail{
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: 500;
     color: var(--clr-primario-light);
     background-color: var(--clr-terciario);

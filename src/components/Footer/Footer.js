@@ -1,65 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';   
-import { BsInstagram, BsFacebook, BsLinkedin, BsYoutube } from 'react-icons/bs';
-import Logo from '../Logo/Logo';
+import { BsInstagram, BsFacebook, BsLinkedin, BsYoutube, BsWhatsapp } from 'react-icons/bs';
 
 function Footer() {
-  return (
-    <div className={styles.Footer}>
-        <div className={styles.FooterContentContainer}>
-            <div className={styles.FooterContentLogo}>
-                <Logo />
-            </div>
+    return (
+        <div>
+            <section className={styles.Redes}>
+                <ul className={styles.iconList}>
 
-            <div className={styles.FooterContentNavBar}>
-                <Link to='/'>
-                    <button className={styles.buttonFooter}>Home</button>
-                </Link>
-                <Link to='/tienda'>
-                    <button className={styles.buttonFooter}>Todo</button>
-                </Link>
-                <Link to="/category/Corporativa">
-                    <button className={styles.buttonFooter}>Corporativa</button>
-                </Link>
-                <Link to="/category/Ambiental">
-                    <button className={styles.buttonFooter}>Ambiental</button>
-                </Link>
-                <Link to="/category/Turística">
-                    <button className={styles.buttonFooter}>Turística</button>
-                </Link>
-                <Link to="/category/Vial">
-                    <button className={styles.buttonFooter}>Vial</button>
-                </Link>
-                <Link to="/category/Seguridad">
-                    <button className={styles.buttonFooter}>Seguridad</button>
-                </Link>
+                    <li className={styles.iconItem}>
+                        <Link to='https://www.instagram.com/aldan.industries/' className={styles.iconLink}><BsInstagram /></Link>
+                    </li>
 
-            </div>
+                    <li className={styles.iconItem}>
+                        <Link to='https://www.facebook.com/aldan.com.ec/' className={styles.iconLink}><BsFacebook /></Link>
+                    </li>
 
-            <div className={styles.FooterContentInfo}>
-                <h4>Redes Sociales</h4>
-                <div className={styles.FooterContentInfoRedes}>
-                    <Link to=''>
-                        <button className={styles.buttonFooter}>< BsInstagram /></button>
-                        <button className={styles.buttonFooter}>< BsFacebook /></button>
-                        <button className={styles.buttonFooter}>< BsLinkedin /></button>
-                        <button className={styles.buttonFooter}>< BsYoutube /></button>
+                    <li className={styles.iconItem}>
+                        <Link to='https://www.youtube.com/aldanindustries' className={styles.iconLink}><BsYoutube /></Link>
+                    </li>
+
+                    <li className={styles.iconItem}>
+                        <Link to='https://www.linkedin.com/company/aldan-industries/' className={styles.iconLink}><BsLinkedin /></Link>
+                    </li>
+
+                    <li className={styles.iconItem}>
+                        <Link to='https://api.whatsapp.com/send?phone=593997878480' className={styles.iconLink}><BsWhatsapp /></Link>
+                    </li>
+
+                </ul>
+            </section>
+        
+            <div className={styles.FooterContentCopyright}>
+                <p>Copyright © 2023 - Aplicación web desarrollada por 
+                    <Link to='/'>
+                        <button className={styles.buttonDeveloper}>
+                            <strong> Daniel Andrade León </strong>
+                        </button>
                     </Link>
-                </div>
-                
+                </p>
             </div>
-
         </div>
-        <div className={styles.FooterContentCopyright}>
-            <h6>Copyright © 2023 - Aplicación web desarrollada por 
-                 <Link to='/'>
-                 <button className={styles.buttonDeveloper}>
-                        <strong> Aldan </strong>
-                 </button>
-                </Link></h6>
-        </div>
-    </div>
   )
 }
 

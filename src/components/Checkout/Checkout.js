@@ -4,13 +4,14 @@ import { CartContext } from '../../context/CartContext';
 import { useState, useContext } from 'react';
 import  db from "../../config/firebase/firebaseConfig"
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
+import styles from './Checkout.module.css';
 
 
 const Checkout = () => {
     const [ loading, setLoading ] = useState(false);
     const [ orderId, setOrderId ] = useState('');
 
-    const { cart, total, clearCart } = useContext( CartContext );
+    const { cart, cartTotal, clearCart } = useContext( CartContext );
 
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true);
@@ -21,7 +22,7 @@ const Checkout = () => {
                     name, phone, email
                 },
                 items: cart,
-                total: total,
+                total: cartTotal(),
                 date: Timestamp.fromDate(new Date())
             }
 
@@ -61,6 +62,7 @@ const Checkout = () => {
 
                 setOrderId(orderAdded.id);
                 clearCart();
+
             } else {
                 console.error('Hay productos que están fuera de stock');
             }
@@ -74,19 +76,29 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1>Se está generando su orden...</h1>
+        return  <h1 className={styles.MensajeOrden}>
+                    Se está generando su orden...
+                </h1>
     }
 
     if(orderId) {
-        return <h1>Orden generada con éxito. Su número de orden es: {orderId}</h1>
+        return  <h1 className={styles.MensajeOrden}>
+                    Orden generada con éxito. El código de su orden es:
+                    <span>
+                        {orderId}
+                    </span>
+                </h1> 
     }
 
+
     return (
-        <div>
-            <h1>Checkout</h1>
+        <div className={styles.CheckoutContainer}>
+            <h2 className={styles.CheckoutTitle}>
+                Checkout
+            </h2>
             <CheckoutForm onConfirm={createOrder} />
         </div>
-    )
+    ) 
 }
 
 export default Checkout;

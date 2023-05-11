@@ -47,5 +47,12 @@
 
 .ItemFooter{
     margin:2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    
 }
 

@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (    
@@ -24,7 +25,7 @@ function App() {
             <Route path='/checkout' element={<Checkout/>} />
             <Route path='*' element={<h2>404 NOT FOUND</h2>} />
           </Routes>
-          
+          <Footer />    
         </CartProvider>
        </BrowserRouter>
     </div>
