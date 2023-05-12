@@ -5,7 +5,7 @@ import { useState, useContext } from 'react';
 import  db from "../../config/firebase/firebaseConfig"
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 import styles from './Checkout.module.css';
-
+import { PulseLoader } from "react-spinners";
 
 const Checkout = () => {
     const [ loading, setLoading ] = useState(false);
@@ -77,6 +77,7 @@ const Checkout = () => {
 
     if(loading) {
         return  <h1 className={styles.MensajeOrden}>
+                    <PulseLoader color="red" loading={loading} size={15} />
                     Se está generando su orden...
                 </h1>
     }

@@ -1,5 +1,5 @@
 
-let products = [
+let productos = [
   {
     id: "1",
     nombre: "Directorio Cristal",
@@ -77,7 +77,7 @@ let products = [
 export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products);
+      resolve(productos);
     }, 500);
   });
 }
@@ -85,7 +85,7 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.find(prod => prod.id === productId));
+      resolve(productos.find(prod => prod.id === productId));
     }, 500);
   });
 }
@@ -93,7 +93,7 @@ export const getProductById = (productId) => {
 export const getProductsByCategory = (category) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.filter(prod => prod.categoria === category));
+      resolve(productos.filter(prod => prod.categoria === category));
     }, 500);
   });
 }
