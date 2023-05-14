@@ -6,6 +6,7 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
 
     console.log(cart);
 
@@ -16,7 +17,9 @@ export const CartProvider = ({ children }) => {
         if(!isInCart(item.id)){
             setCart((prev) => [...prev, { ...item, quantity}])
         } else {
-            console.error("El producto ya está en el carrito")
+            setShowErrorMessage(true);
+
+            console.error('El producto ya se encuentra en el carrito');
             
             let updatedCart = [...cart];
             updatedCart[itemIndex].quantity += quantity;
@@ -48,7 +51,18 @@ export const CartProvider = ({ children }) => {
         return cart.reduce((acc, prod) => (acc += prod.precio * prod.quantity), 0);
       };
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, totalQuantity, cartTotal }}>
+        <CartContext.Provider
+            value={{
+                cart,
+                addItem,
+                removeItem,
+                clearCart,
+                totalQuantity,
+                cartTotal,
+                showErrorMessage,
+                setShowErrorMessage,
+                 }}
+        >
             { children }
         </CartContext.Provider>
     );

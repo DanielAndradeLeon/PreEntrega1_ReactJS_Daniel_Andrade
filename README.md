@@ -23,6 +23,9 @@ _Enlaces de la documentación de las herramientas utilizadas_
 * [Css](https://developer.mozilla.org/es/docs/Web/CSS) - Lenguaje de estilos.
 * [Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript) - Lenguaje de programación.
 * [React Js](https://react.dev/) - Librería reactiva.
+* [React Icons](https://www.npmjs.com/package/react-icons) - Librería de íconos.
+* [React Spinners](https://www.npmjs.com/package/react-spinners) - Barra de carga.
+
 
 
 ## Autor ✒️
@@ -32,4 +35,5 @@ _Creado por:_
 * **Daniel Andrade León** - *Cursando Carrera de Desarrollo Full Stack en* [Coderhouse](https://www.coderhouse.com)
 
 
----Copyright 2023 Daniel Andrade León
+Copyright © 2023 Daniel Andrade León
+Copyright © 2023 Aldan Idustries

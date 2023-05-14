@@ -61,7 +61,7 @@ const CheckoutForm = ({ onConfirm }) => {
             type="text"
             value={name}
             onChange={handleNameChange}
-            pattern="[A-Za-z\s]+"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
             placeholder="Ej: Juan Pérez"
           />
           {errors.name && <span className={styles.Error}>{errors.name}</span>}
@@ -100,7 +100,7 @@ const CheckoutForm = ({ onConfirm }) => {
             {errors.verifyEmail && <span className={styles.Error}>{errors.verifyEmail}</span>}
         </label>
         <button className={`${styles.Button} ${isValid ? styles.ActiveButton : ''}`} type="submit" disabled={!isValid}>
-          Confirmar compra
+          Checkout
         </button>
       </form>
     </div>

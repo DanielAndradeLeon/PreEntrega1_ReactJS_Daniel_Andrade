@@ -10,6 +10,8 @@ const ItemDetail = ({id, nombre, descripcion, pictureURL, precio, stock}) => {
 
     const { addItem } = useContext( CartContext );
 
+    const { showErrorMessage } = useContext(CartContext);
+
     const handleOnAdd = (quantity) => {
         
         setQuantityAdded(quantity)
@@ -66,6 +68,9 @@ const ItemDetail = ({id, nombre, descripcion, pictureURL, precio, stock}) => {
 
   
             </footer>
+            <div>
+              {showErrorMessage && <h3>El producto ya está en el carrito</h3>}
+            </div>
         </article>
     )
 }
