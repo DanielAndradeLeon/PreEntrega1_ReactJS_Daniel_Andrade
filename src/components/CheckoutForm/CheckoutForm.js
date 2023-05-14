@@ -18,7 +18,8 @@ const CheckoutForm = ({ onConfirm }) => {
 
   const handleNameChange = ({ target }) => {
     setName(target.value);
-    const nameError = target.value.trim() === '' || !/^[A-Za-z]+\s[A-Za-z]+$/.test(target.value)
+    const nameError =
+      target.value.trim() === '' || !/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(target.value)
       ? 'Por favor, ingresa un nombre y un apellido válidos.'
       : '';
     setErrors((prevState) => ({ ...prevState, name: nameError }));
@@ -61,7 +62,7 @@ const CheckoutForm = ({ onConfirm }) => {
             type="text"
             value={name}
             onChange={handleNameChange}
-            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
             placeholder="Ej: Juan Pérez"
           />
           {errors.name && <span className={styles.Error}>{errors.name}</span>}
